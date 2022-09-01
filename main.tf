@@ -1,19 +1,15 @@
-variable "signalfx_key" {
-  type = string
-}
-
 terraform {
   required_providers {
     signalfx = {
-      source = "splunk-terraform/signalfx"
-      version = "6.1.0"
+      source  = "splunk-terraform/signalfx"
+      version = "6.16.0"
     }
   }
 }
 
 provider "signalfx" {
   auth_token = var.signalfx_key
-  # api_url = "https://api.us0.signalfx.com"
+  api_url    = var.signalfx_api_url
 }
 
 # resource "signalfx_time_chart" "mychart0" {

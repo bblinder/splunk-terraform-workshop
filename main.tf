@@ -18,7 +18,7 @@ resource "signalfx_time_chart" "mychart0" {
   description = "Very cool chart"
 
   program_text = <<-EOF
-    data("cpu.total.idle").publish()
+    data("cpu.utilization", filter=filter('host', '*')).publish()
     EOF
 }
 

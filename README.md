@@ -4,7 +4,7 @@ Monitoring-As-Code Workshop
 ## Splunk Internal Materials
 
 Slides:
-[Here](https://docs.google.com/presentation/d/1NbUzZcoZei6B_Y_Ya3yuqlZi6JO-UJws0IC-0GIA2V0/edit?usp=sharing)
+[Here](https://docs.google.com/presentation/d/1GsnulNVU0j8kSD0W7sM8tJK467jLbJWkhh4oSzw5Rew/edit?usp=sharing)
 
 Lab Instructions: 
 [Here](https://docs.google.com/document/d/1cI0-42FZthAJHDlSsaJsRPvIKL11vOMvY89mPKoQxdQ/edit?usp=sharing)

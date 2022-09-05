@@ -7,11 +7,6 @@ variable "signalfx_realm" {
   default = "us0"
 }
 
-variable "signalfx_api_url" {
-  type    = string
-  default = "https://api.signalfx.com"
-}
-
 variable "username" {
   type = string
 }

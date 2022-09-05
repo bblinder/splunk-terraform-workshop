@@ -14,11 +14,11 @@ provider "signalfx" {
 }
 
 resource "signalfx_time_chart" "mychart0" {
-  name        = "CPU Total Idle"
+  name        = "CPU Utlization"
   description = "Very cool chart"
 
   program_text = <<-EOF
-    data("cpu.utilization", filter=filter('host', '*')).publish()
+    data("cpu.utilization", filter=filter('host', '*')).publish(label='CPU Utilization')
     EOF
 }
 

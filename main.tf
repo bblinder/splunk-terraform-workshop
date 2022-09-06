@@ -14,7 +14,7 @@ provider "signalfx" {
 }
 
 resource "signalfx_time_chart" "mychart0" {
-  name        = "CPU Utlization"
+  name        = "CPU Utilization"
   description = "Very cool chart"
 
   program_text = <<-EOF

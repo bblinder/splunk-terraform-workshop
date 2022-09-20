@@ -2,7 +2,11 @@ terraform {
   required_providers {
     signalfx = {
       source  = "splunk-terraform/signalfx"
-      version = "6.17.0"  # if the version is not included, Terraform will use the latest.
+      version = "6.17.0" # if the version is not included, Terraform will use the latest.
+    }
+    dominos = {
+      source  = "the-noid/dominos"
+      version = "0.1.0"
     }
   }
 }
@@ -37,6 +41,15 @@ provider "signalfx" {
 #     height   = 1
 #     row      = 0
 #   }
+# }
+
+# resource "signalfx_event_feed_chart" "myeventfeed0" {
+#   name        = "Workshop Event Feed - ${var.username}"
+#   description = "Dominos Pizza Order"
+
+#   program_text = <<-EOF
+#     data('dominos_pizza_order', filter=filter('pizza_attributes', '*')).publish(label='Dominos Pizza Order')
+#     EOF
 # }
 
 # # print URL to dashboard

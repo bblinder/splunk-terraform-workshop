@@ -37,9 +37,16 @@ provider "signalfx" {
 
 #   chart {
 #     chart_id = signalfx_time_chart.mychart0.id
-#     width    = 12
-#     height   = 1
+#     width    = 6
+#     height   = 2
 #     row      = 0
+#   }
+
+#   chart {
+#     chart_id = signalfx_event_feed_chart.myeventfeed0.id
+#     width    = 3
+#     height   = 3
+#     column = 6
 #   }
 # }
 
@@ -48,8 +55,9 @@ provider "signalfx" {
 #   description = "Dominos Pizza Order"
 
 #   program_text = <<-EOF
-#     A = events(eventType='dominos_pizza_order').publish(label='Dominos Pizza Order')
+#     A = events(eventType='dominos_pizza_order:*').publish(label='A')
 #     EOF
+
 # }
 
 # # print URL to dashboard

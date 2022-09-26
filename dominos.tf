@@ -112,7 +112,6 @@ resource "dominos_order" "order" {
 }
 
 
-
 output "pizzas" {
   value = [
     for pizza in data.dominos_menu_item.pizzas :
@@ -123,7 +122,6 @@ output "pizzas" {
     }
   ]
 }
-
 
 # output "drinks" {
 #   value = [
@@ -136,10 +134,9 @@ output "pizzas" {
 #   ]
 # }
 
-# CURL command to send custom event to signalFx api
+# CURL command to send pizza attributes as custom event to Splunk API.
 resource "null_resource" "eventfeed" {
   provisioner "local-exec" {
-    #command = "curl -X POST -H 'Content-Type: application/json' -H 'X-SF-TOKEN: ${var.signalfx_token}' -d '{\"eventType\": \"${var.event_type}\", \"dimensions\": {\"${var.dimension_name}\": \"${var.dimension_value}\"}}' https://ingest.${var.signalfx_realm}.signalfx.com/v2/event"
     command = <<-EOF
     curl -L -X POST 'https://ingest.${var.signalfx_realm}.signalfx.com/v2/event' \
       -H 'X-SF-TOKEN: ${var.signalfx_key}' \

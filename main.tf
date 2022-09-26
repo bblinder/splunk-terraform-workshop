@@ -48,7 +48,7 @@ provider "signalfx" {
 #   description = "Dominos Pizza Order"
 
 #   program_text = <<-EOF
-#     data('dominos_pizza_order', filter=filter('pizza_attributes', '*')).publish(label='Dominos Pizza Order')
+#     A = events(eventType='dominos_pizza_order').publish(label='Dominos Pizza Order')
 #     EOF
 # }
 
